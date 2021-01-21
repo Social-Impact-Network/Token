@@ -4,9 +4,9 @@
   "description": "Token Smart Contracts of the Social Impact Network",
   "main": "truffle-config.js",
   "dependencies": {
+    "@openzeppelin/contracts": "^3.3.0",
+    "@truffle/hdwallet-provider": "^1.2.1",
     "dotenv": "^8.2.0",
-    "oneclick": "^1.0.2",
-    "solidity-docgen": "^0.5.11",
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "devDependencies": {},
