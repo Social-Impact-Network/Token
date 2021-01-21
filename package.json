@@ -1,0 +1,26 @@
+{
+  "name": "token",
+  "version": "1.0.0",
+  "description": "Token Smart Contracts of the Social Impact Network",
+  "main": "truffle-config.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "oneclick": "^1.0.2",
+    "solidity-docgen": "^0.5.11",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Social-Impact-Network/Token.git"
+  },
+  "author": "MLCrypt GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Social-Impact-Network/Token/issues"
+  },
+  "homepage": "https://github.com/Social-Impact-Network/Token#readme"
+}
