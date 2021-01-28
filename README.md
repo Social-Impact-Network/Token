@@ -3,10 +3,9 @@
 [![GitHub package version](https://img.shields.io/github/v/release/Social-Impact-Network/Token?include_prereleases&style=plastic)](https://github.com/Social-Impact-Network/Token/blob/master/package.json)
 [![Twitter](https://img.shields.io/twitter/follow/SINetwork1.svg?style=social&label=@SINetwork1)](https://twitter.com/SINetwork1)
 
-## Social Impact Network Smart Contracts (Token)
+## Social Impact  Token (Smart Contract)
 
-Social Impact Network Token is the frontend of Social Impact Network. Through SI Platform, investors can easily interact with SI Smart Contracts and SI Transparent Impact Measurment System.
-
+The Social Impact Token (SI Token) is used for payment flows (including investment, allocation, interest and payouts). SI Token is an ERC20 token on the Ethereum Blockchain, programmed in Solidity. All interactions with SI Token can be done through SI platform (frontend). Since the token was implemented according to the ERC20 standard, the basic functions (e.g. sending and receiving) can also be performed via any ERC20-enabled wallet.
 
 ## Vulnerabilites, Bugs & Feature Request
 
@@ -21,8 +20,8 @@ If you find any vulnerability, bug, or you want a feature added, feel free to su
 5. Run `npm install -g truffle` to install Truffle Suite.
 6. Run `npm install` to install node packages.
 7. Set up your own personal Ethereum-Virtual-Machine based Blockchain. Check out this [Quickstart](https://www.trufflesuite.com/docs/ganache/quickstart)
-6. Run `truffle migrate --network development` to deploy the Smart Contract in you personal Blockchain.
-7. You can interact with the Smart Contract by setting up the [Frontend](https://github.com/Social-Impact-Network/Frontend) or directly via Web3 client (e.g. [ethers.js](https://github.com/ethers-io/ethers.js/) or [web3.js](https://github.com/ChainSafe/web3.js).
+8. Run `truffle migrate --network development` to deploy the Smart Contract in you personal Blockchain.
+9. You can interact with the Smart Contract by setting up the [Frontend](https://github.com/Social-Impact-Network/Frontend) or directly via Web3 client (e.g. [ethers.js](https://github.com/ethers-io/ethers.js/) or [web3.js](https://github.com/ChainSafe/web3.js).
 
 ## Getting started in Production Mode
 
