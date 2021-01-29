@@ -10,6 +10,11 @@ import "./math/SafeMathInt.sol";
 import "./math/SafeMathUint.sol";
 import "./uniswap/IUniswapV2Router02.sol";
 
+
+/// @title Social Impact Token implementation - Distributing Security Token for one-time fundraising 
+/// @author MLCrypt GmbH
+/// @notice You can use this security token implementation to raise one-time funds and distribute DAI to token holders on a regular basis
+/// @dev Value is stored as DAI. The implementation has not been audited.
 contract SIPilotToken is Context, AccessControl, IERC20 {
     using SafeMath for uint256;
     using SafeMathUint for uint256;
@@ -39,11 +44,35 @@ contract SIPilotToken is Context, AccessControl, IERC20 {
     mapping(address => int256) private claimableAmountCorrections;
     mapping(address => uint256) private withdrawnAmounts;
 
+    /// @notice Token purchase event
+    /// @param transmitter address of the initiator
+    /// @param buyer address of the buyer
+    /// @param amountDai amount of DAI for the token purchase
+    /// @param amountToken amount of purchased tokens
     event TokensPurchased(address indexed transmitter, address indexed buyer, uint256 amountDAI, uint256 amountToken);
+
+    /// @notice Release of raised funds event
+    /// @param beneficiary adress of the beneficiary
+    /// @param amountDai amount of the released DAI
     event FundsReleased(address indexed beneficiary, uint256 amountDAI);
+
+    /// @notice received payment from beneficiary event
+    /// @param project_owner address of the beneficiary
+    /// @param amountDAI amount of the received DAI 
     event PaymentReceived(address indexed project_owner, uint256 amountDAI);
+
+    /// @notice payment to the investor event
+    /// @param tokenholder address of the investor / tokenholder
+    /// @param amountDAI amount of the paid out DAI
     event AmountPaidOut(address indexed tokenholder, uint256 amountDAI);
 
+    /// @notice Initialization of the Security Token
+    /// @param name_ Name
+    /// @param symbol_ Symbol
+    /// @param decimals_ Decimals
+    /// @param cap_ Fund raising cap
+    /// @param rate_ Conversion Rate DAI <-> Security Token
+    /// @param beneficiary_ Address of the beneficiary
     constructor (string memory name_, string memory symbol_, uint8 decimals_, uint256 cap_, uint256 rate_, address beneficiary_) {
         _setupRole(MINTER_ROLE, _msgSender());
         _uniswapRouter = IUniswapV2Router02(UNISWAP_ROUTER_ADDRESS);
@@ -58,15 +87,21 @@ contract SIPilotToken is Context, AccessControl, IERC20 {
         _rate = rate_;
         _beneficiary = beneficiary_;
     }
-
+ 
+    /// @notice Returns the name
+    /// @return The Name
     function name() public view returns (string memory) {
         return _name;
     }
 
+    /// @notice Returns the symbol
+    /// @return The symbol
     function symbol() public view returns (string memory) {
         return _symbol;
     }
 
+    /// @notice Returns the decimals
+    /// @return The decimals
     function decimals() public view returns (uint8) {
         return _decimals;
     }
